@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="main2.css">
+  <title>Julie Thorpe</title>
+  <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initialscale=1">
+  <style>
+      *{text-align:center}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+  </script>
+  <script src="appcontroller.js"></script>
+</head>
+<body ng-app="app">
+  <div class="header1">
+      <img class="headphoto" src="images/capture.jpg">
+  </div>
+  <div class ="topnav">
+    <a href="home.html">Home</a> <a href="pub.html">Publications</a> <a href="press.html">Press</a> <a href="research.html">Research Interest and Programs</a> <a href="teaching.html">Teaching</a> <a href="group.html">Research Group</a> <a href="contact.html">Contact</a>
+    <a href="http://localhost:8080/login">ADMIN PAGE</a>
+  </div>
+
+  <div ng-controller="bioctrl">
+  <h1 style="text-align:center"> Research interest </h1><br>
+  <p style="line-height:22px;margin:20px 120px;text-align:center">
+    {{interest}}
+  </p>
+  <br><br>
+
+  <h1 style="font-size:25px">Research Interests Areas</h1>
+  <p style="line-height:22px;margin:20px 120px;text-align:center">
+     {{area}}</p> <br><br>
+</div>
+  <div ng-controller="researchctrl">
+  <h1 style="font-size:25px"> Research Projects </h1>
+  <br>
+  <p ng-repeat="x in programarray" style="line-height:22px;margin:20px 120px;text-align:center">
+    <b style="font-size:20px"> {{x.programTitle}} </b> <br><br>
+   {{x.programDescription}}<br><br><br>
+ </p><br><br>
+</div>
+
+<div class="footer">
+     <p>all work © Julie Thorpe • all rights reserved • to license images, get in touch</p>
+  </div>
+</body>
+</html>

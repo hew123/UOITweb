@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link rel ="stylesheet" type="text/css" href="admin.css">
+      <meta charset="utf-8">
+      <meta name ="viewport" content="width=device-width,initial-scale=1">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="../AdminPage/jquery.validate.js"></script>
+      <script src="../AdminPage/AddValidateMethod.js"></script>
+
+      <div class="header1">
+          <img class="headphoto" src="images2/capture.jpg">
+      </div>
+
+      <h1> Admin Page </h1>
+    </head>
+
+    <body>
+
+      <script>
+
+        $(document).ready(function(){
+
+          $("#adminform").validate({
+
+            rules:{
+              about:{optionaltext:true},
+              interest:{optionaltext:true},
+              area:{optionaltext:true}
+            }
+          });
+        });
+
+      </script>
+
+      <div class ="topnav">
+        <a href="http://localhost:8080/bio">Bio</a>
+        <a href="http://localhost:8080/pub">Publications</a>
+        <a href="http://localhost:8080/press">Press</a>
+        <a href="http://localhost:8080/research">Research Interest and Programs</a>
+        <a href="http://localhost:8080/teaching">Teaching</a>
+        <a href="http://localhost:8080/group">Research Group</a>
+        <a href="http://localhost:8080/contact">Contact</a>
+        <a href="http://localhost:8080/news">News</a>
+        <a href="http://localhost:8080/logout">LOGOUT</a>
+
+      </div>
+
+      <div class="mainbody">
+      <h2 style="font-size:30px;"> Biography <h2>
+
+      <form id="adminform" action="http://localhost:8080/update/bio" method="post" enctype="multipart/form-data">
+
+      <h2> About me </h2>
+      <textarea id="about" name="about" rows="7" cols="45" placeholder=" Write your bio here" ></textarea>
+
+      <h2> Research Interest </h2>
+      <textarea id="interest" name="interest" rows="7" cols="45" placeholder=" Write your research interest here" ></textarea>
+
+      <h2> Research Interest Area </h2>
+      <textarea id="area" name="area" rows="7" cols="45" placeholder=" Write your research interest here" ></textarea>
+
+      <h2> Profile picture </h2>
+      <input type="file" name="file" size="6000"> <br><br>
+
+      <input type="submit" value="Update"> <br>
+    </div>
+
+    </body>
+
+  </html>

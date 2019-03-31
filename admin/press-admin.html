@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link rel ="stylesheet" type="text/css" href="admin.css">
+      <meta charset="utf-8">
+      <meta name ="viewport" content="width=device-width,initial-scale=1">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="../AdminPage/jquery.validate.js"></script>
+      <script src="../AdminPage/AddValidateMethod.js"></script>
+      <div class="header1">
+          <img class="headphoto" src="images2/capture.jpg">
+      </div>
+
+      <h1> Admin Page </h1>
+    </head>
+
+    <body>
+
+      <script>
+
+        $(document).ready(function(){
+
+          $("#adminform").validate({
+
+            rules:{
+              pressrelease:{
+                required: true,
+              },
+              year:{
+                required:true,
+                checkYear:true
+              },
+              url: {
+                required: true,
+                url: true
+              },
+              description:{
+                optionaltext:true
+              }
+            },
+            messages:{
+              pressrelease:{
+                required: " Please enter the title"
+              },
+              year:{
+                required:" Please enter year",
+                checkYear:" Please enter valid year"
+              },
+              url:{
+                required:"  Please enter your link",
+                url: " Please a valid URL with 'https://' at the front"
+              }
+
+            }
+          });
+
+
+        });
+
+      </script>
+
+      <div class ="topnav">
+        <a href="http://localhost:8080/bio">Bio</a>
+        <a href="http://localhost:8080/pub">Publications</a>
+        <a href="http://localhost:8080/press">Press</a>
+        <a href="http://localhost:8080/research">Research Interest and Programs</a>
+        <a href="http://localhost:8080/teaching">Teaching</a>
+        <a href="http://localhost:8080/group">Research Group</a>
+        <a href="http://localhost:8080/contact">Contact</a>
+        <a href="http://localhost:8080/news">News</a>
+        <a href="http://localhost:8080/logout">LOGOUT</a>
+      </div>
+
+      <div class="mainbody">
+      <h2 style="font-size:30px;"> Press Release <h2>
+
+      <form id="adminform" action="http://localhost:8080/update/press" method="post">
+
+      <h2> Title of Press Release </h2>
+      <input id="pressrelease" title="pressrelease" type="text" name="pressrelease" placeholder="title">
+
+      <h2> Year </h2>
+      <input id="year" title="year" type="year" name="year" placeholder="year">
+
+      <h2> Description </h2>
+      <textarea id="description" name="description" rows="13" cols="45" placeholder=" Write discription of the article here" ></textarea>
+
+      <h2> Link </h2>
+      <input id="url" type="url" name="url" placeholder="link">
+
+      <br><br>
+
+      <input type="submit" value="Post"> <br>
+    </div>
+
+    </body>
+
+  </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="main2.css">
+  <link rel="stylesheet" type="text/css" href="pub.css">
+  <title>Julie Thorpe</title>
+  <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initialscale=1">
+  <style>
+  .journal{margin-left:20%}
+
+  .conference{margin-left: 20%}
+
+  .workshop{margin-left: 20%}
+
+  .poster{margin-left:20%
+  }
+  .technical{margin-left:20%
+  }
+  td{padding:12px}
+
+  a{text-decoration:none;}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+  </script>
+  <script src="appcontroller.js"></script>
+</head>
+<body ng-app="app" ng-controller="pubctrl">
+    <div class="header1">
+        <img class="headphoto" src="images/capture.jpg">
+    </div>
+    <div class ="topnav">
+        <a href="home.html">Home</a> <a href="pub.html">Publications</a> <a href="press.html">Press</a> <a href="research.html">Research Interest and Programs</a> <a href="teaching.html">Teaching</a> <a href="group.html">Research Group</a> <a href="contact.html">Contact</a>
+    <a href="http://localhost:8080/login">ADMIN PAGE</a>
+    </div>
+    <h2 style="text-align: center; font-size:30px;">Selected Publications </h2>
+    <div class="journal">
+        <h3>Journal Papers</h3>
+        <table style="width:70%">
+          <tr ng-repeat="x in pubarray| filter : {journaltype: 'journal'}">
+            <td> {{x.year}} </td>
+            <td> {{x.pressrelease}} {{x.description}} [<a href="{{x.url}}">link</a>]</td>
+          </tr>
+        </table>
+    </div>
+    <div class="conference">
+        <h3>Conference Paper</h3>
+        <table style="width:70%">
+          <tr ng-repeat="x in pubarray| filter : {journaltype: 'conference'}">
+            <td> {{x.year}} </td>
+            <td> {{x.pressrelease}} {{x.description}} [<a href="{{x.url}}">link</a>]</td>
+          </tr>
+        </table>
+
+
+    </div>
+    <div class="workshop">
+        <h3>Workshop Paper</h3>
+        <table style="width:70%">
+          <tr ng-repeat="x in pubarray| filter : {journaltype: 'workshop'}">
+            <td> {{x.year}} </td>
+            <td> {{x.pressrelease}} {{x.description}} [<a href="{{x.url}}">link</a>]</td>
+          </tr>
+        </table>
+    </div>
+    <div class="poster">
+        <h3>Posters</h3>
+        <table style="width: 70%">
+          <tr ng-repeat="x in pubarray| filter : {journaltype: 'poster'}">
+            <td> {{x.year}} </td>
+            <td> {{x.pressrelease}} {{x.description}} [<a href="{{x.url}}">link</a>]</td>
+          </tr>
+        </table>
+    </div>
+    <div class="technical" >
+        <h3>Technical Reports</h3>
+        <table style="width: 70%">
+          <tr ng-repeat="x in pubarray| filter : {journaltype: 'technicalreport'}">
+            <td> {{x.year}} </td>
+            <td> {{x.description}} [<a href="{{x.url}}">link</a>]</td>
+          </tr>
+        </table>
+    </div>
+
+
+  <div class="footer">
+     <p>all work © Julie Thorpe • all rights reserved • to license images, get in touch</p>
+  </div>
+</body>
+</html>

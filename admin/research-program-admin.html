@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link rel ="stylesheet" type="text/css" href="admin.css">
+      <meta charset="utf-8">
+      <meta name ="viewport" content="width=device-width,initial-scale=1">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="../AdminPage/jquery.validate.js"></script>
+      <script src="../AdminPage/AddValidateMethod.js"></script>
+      <div class="header1">
+          <img class="headphoto" src="images2/capture.jpg">
+      </div>
+
+      <h1> Admin Page </h1>
+    </head>
+
+    <body>
+
+      <script>
+
+        $(document).ready(function(){
+
+          $("#adminform").validate({
+
+            rules:{
+              researchInterest:{
+                required:true
+              },
+              programTitle:{
+                required: true,
+                minlength: 5
+              },
+              programDescription:{
+                required:true
+              }
+            },
+            messages:{
+              programTitle:{
+                required: " Please enter title"
+              }
+            }
+          });
+
+
+        });
+
+      </script>
+
+      <div class ="topnav">
+        <a href="http://localhost:8080/bio">Bio</a>
+        <a href="http://localhost:8080/pub">Publications</a>
+        <a href="http://localhost:8080/press">Press</a>
+        <a href="http://localhost:8080/research">Research Interest and Programs</a>
+        <a href="http://localhost:8080/teaching">Teaching</a>
+        <a href="http://localhost:8080/group">Research Group</a>
+        <a href="http://localhost:8080/contact">Contact</a>
+        <a href="http://localhost:8080/news">News</a>
+        <a href="http://localhost:8080/logout">LOGOUT</a>
+      </div>
+
+      <div class="mainbody">
+      <h2 style="font-size:30px;"> Research <h2>
+
+      <form id="adminform" action="http://localhost:8080/update/research" method="post">
+      <h2> Research Programs </h2>
+      <input id="programTitle" type="text" name="programTitle" placeholder="program title"> <br><br>
+      <textarea id="programDescription" name="programDescription" rows="13" cols="45"
+      placeholder=" Write your program description here" ></textarea><br><br>
+
+      <input type="submit" value="Append"> <br>
+    </form>
+    </div>
+
+    </body>
+
+  </html>

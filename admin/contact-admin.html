@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link rel ="stylesheet" type="text/css" href="admin.css">
+      <meta charset="utf-8">
+      <meta name ="viewport" content="width=device-width,initial-scale=1">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="../AdminPage/jquery.validate.js"></script>
+      <script src="../AdminPage/AddValidateMethod.js"></script>
+
+      <div class="header1">
+          <img class="headphoto" src="images2/capture.jpg">
+      </div>
+
+      <h1> Admin Page </h1>
+    </head>
+
+    <body>
+
+      <script>
+
+        $(document).ready(function(){
+          $("#adminform").validate({
+            rules:{
+              address:{required:true},
+              phone_number: {required:true, phoneUS:true},
+              email: {required: true, email: true}
+            },
+            messages:{
+              address:{required: " Please enter your office address"},
+              phone_number:{required:"  Please enter your phone number"},
+              email:{required:"  Please enter your email address"}
+            }
+          });
+        });
+
+      </script>
+
+      <div class ="topnav">
+        <a href="http://localhost:8080/bio">Bio</a>
+        <a href="http://localhost:8080/pub">Publications</a>
+        <a href="http://localhost:8080/press">Press</a>
+        <a href="http://localhost:8080/research">Research Interest and Programs</a>
+        <a href="http://localhost:8080/teaching">Teaching</a>
+        <a href="http://localhost:8080/group">Research Group</a>
+        <a href="http://localhost:8080/contact">Contact</a>
+        <a href="http://localhost:8080/news">News</a>
+        <a href="http://localhost:8080/logout">LOGOUT</a>
+      </div>
+
+      <div class="mainbody">
+      <h2 style="font-size:30px;"> Contact Information <h2>
+
+      <form id="adminform" action="http://localhost:8080/update/contact" method="post"  enctype="multipart/form-data">
+
+      <h2> Office Address </h2>
+      <input id="address"  type="address" name="address" placeholder="office address"><br>
+
+      <h2> Phone number </h2>
+      <input id="phone_number" type="text" name="phone_number" placeholder="phone number"><br>
+
+      <h2> Email Address </h2>
+      <input id="email" type="email" name="email" placeholder="Email address">
+
+      <h2> Profile picture </h2>
+
+      <input type="file" name="file" size="6000"><br><br>
+      <input type="submit" value="Update"> <br>
+    </div>
+
+    </body>
+
+  </html>

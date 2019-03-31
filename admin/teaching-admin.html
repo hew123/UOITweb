@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link rel ="stylesheet" type="text/css" href="admin.css">
+      <meta charset="utf-8">
+      <meta name ="viewport" content="width=device-width,initial-scale=1">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="../AdminPage/jquery.validate.js"></script>
+      <script src="../AdminPage/AddValidateMethod.js"></script>
+      <div class="header1">
+          <img class="headphoto" src="images2/capture.jpg">
+      </div>
+
+      <h1> Admin Page </h1>
+    </head>
+
+    <body>
+
+      <script>
+
+        $(document).ready(function(){
+
+          $("#adminform").validate({
+
+            rules:{
+              school:{
+                required: true,
+                minlength: 5
+              },
+              semester:{
+                required: true,
+                minlength: 2
+              },
+              courseNumber:{
+                required: true,
+                minlength: 5
+              },
+              courseTitle:{
+                required: true,
+                minlength: 5
+              },
+              year:{
+                required:true,
+                checkYear:true
+              }
+            },
+            messages:{
+              year:{
+                checkYear: " Please enter valid year"
+              }
+            }
+          });
+        });
+
+      </script>
+
+      <div class ="topnav">
+        <a href="http://localhost:8080/bio">Bio</a>
+        <a href="http://localhost:8080/pub">Publications</a>
+        <a href="http://localhost:8080/press">Press</a>
+        <a href="http://localhost:8080/research">Research Interest and Programs</a>
+        <a href="http://localhost:8080/teaching">Teaching</a>
+        <a href="http://localhost:8080/group">Research Group</a>
+        <a href="http://localhost:8080/contact">Contact</a>
+        <a href="http://localhost:8080/news">News</a>
+        <a href="http://localhost:8080/logout">LOGOUT</a>
+      </div>
+
+      <div class="mainbody">
+      <h2 style="font-size:30px;"> Teaching <h2>
+
+      <form id="adminform" action="http://localhost:8080/update/teaching" method="post">
+
+      <h2>School</h2>
+      <input id="school" type="text" name="school" placeholder="Name of the school"><br>
+
+      <h2>Semester</h2>
+      <input id="semester" type="text" name="semester" placeholder="Winter/Fall"><br>
+
+      <h2>Course Title</h2>
+      <input id="courseTitle" type="text" name="courseTitle" placeholder="Course Title"><br>
+
+      <h2>Course Number</h2>
+      <input id="courseNumber" type="text" name="courseNumber" placeholder="Course Number"><br>
+
+      <h2>Year Offered</h2>
+      <input id="year" type="year" name="year" placeholder="Year offered"><br><br>
+
+      <input type="submit" value="Append"> <br>
+    </div>
+
+    </body>
+
+  </html>

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+Desktop/Assignment2/mongodb/bin/mongod --dbpath /Users/hewhew/Desktop/Assignment2/Database/data/db

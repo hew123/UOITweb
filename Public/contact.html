@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="main2.css">
+  <link rel="stylesheet" type="text/css" href="contact.css">
+
+  <title>Julie Thorpe</title>
+  <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initialscale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+  </script>
+  <script src="appcontroller.js"></script>
+</head>
+<body ng-app="app" ng-controller="contactctrl">
+  <div class="header1">
+      <img class="headphoto" src="images/capture.jpg">
+  </div>
+  <div class ="topnav">
+    <a href="home.html">Home</a> <a href="pub.html">Publications</a> <a href="press.html">Press</a> <a href="research.html">Research Interest and Programs</a> <a href="teaching.html">Teaching</a> <a href="group.html">Research Group</a> <a href="contact.html">Contact</a>
+    <a href="http://localhost:8080/login">ADMIN PAGE</a>
+  </div>
+  <div class="row">
+
+      <div class="column middle">
+         <h2>Contact</h2>
+          <p class="profilepic"><img class="pic1" src={{img}} alt="profilepic" style="width:127.8px;height:170.5px;"></p>
+          <p>   {{university}} </p>
+          <p>   {{faculty}} </p>
+          <p class="address">   {{address}} </p>
+          <p class="phone_number">  {{phone_number}} </p>
+          <p class="email">  {{email}} </p>
+
+      </div>
+      <div  class="column map">
+        <h2>Map</h2>
+        <iframe width="400" height="350" src="http://maps.google.com/maps?client=safari&amp;q=University+of+Ontario+Institute+of+Technology%E2%80%8E+2000+Simcoe+Street+North+Oshawa,+ON+L1H+7K4,+Canada+(905)+721-8668&amp;oe=UTF-8&amp;ie=UTF8&amp;hq=(905)+721-8668&amp;hnear=University+of+Ontario+Institute+of+Technology,+2000+Simcoe+St+N,+Oshawa,+Ontario+L1H+7K4,+Canada&amp;t=m&amp;vpsrc=6&amp;ll=43.94667,-78.894281&amp;spn=0.010814,0.018239&amp;z=15&amp;iwloc=A&amp;output=embed"
+        frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+      </div>
+     </div>
+  <div class="footer">
+     <p>all work © Julie Thorpe • all rights reserved • to license images, get in touch</p>
+  </div>
+</body>
+</html>
+<style>
+  p{margin:0;}
+</style>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link rel ="stylesheet" type="text/css" href="admin.css">
+      <meta charset="utf-8">
+      <meta name ="viewport" content="width=device-width,initial-scale=1">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="../AdminPage/jquery.validate.js"></script>
+      <script src="../AdminPage/AddValidateMethod.js"></script>
+
+      <div class="header1">
+          <img class="headphoto" src="images2/capture.jpg">
+      </div>
+
+      <h1> Admin Page </h1>
+    </head>
+
+    <body>
+
+      <script>
+
+        $(document).ready(function(){
+
+          $("#adminform").validate({
+
+            rules:{
+              name:{required: true,  minlength: 5}
+            }
+          });
+        });
+
+      </script>
+
+      <div class ="topnav">
+        <a href="http://localhost:8080/bio">Bio</a>
+        <a href="http://localhost:8080/pub">Publications</a>
+        <a href="http://localhost:8080/press">Press</a>
+        <a href="http://localhost:8080/research">Research Interest and Programs</a>
+        <a href="http://localhost:8080/teaching">Teaching</a>
+        <a href="http://localhost:8080/group">Research Group</a>
+        <a href="http://localhost:8080/contact">Contact</a>
+        <a href="http://localhost:8080/news">News</a>
+        <a href="http://localhost:8080/logout">LOGOUT</a>
+      </div>
+
+      <div class="mainbody">
+      <h2 style="font-size:30px;"> Research Group <h2>
+
+      <form id="adminform" action="http://localhost:8080/update/group" method="post">
+
+      <h2> Past/Current </h2>
+    <!--<input id="pastCurrent" type="text" name="pastCurrent" placeholder="past/current student"><br> -->
+      <select style="width:100px;height:100px;"id="pastCurrent" name="pastCurrent">
+          <option value="current">Current</option>
+          <option value="past">Past</option>
+      </select>
+
+      <h2> Name of Student </h2>
+      <input id="name" type="text" name="name" placeholder="name of student"><br>
+
+      <h2> Degree </h2>
+      <!--<input id="degree" type="text" name="degree" placeholder="PhD/graduate/undergraduate, co-supervised"><br><br>-->
+      <select style="width:100px;height:100px;"id="degree" name="degree">
+          <option value="MSc">Msc</option>
+          <option value="MITS">MITS</option>
+          <option value="undergraduate">Undergraduate</option>
+          <option value="PhD"> PhD </option>
+      </select>
+
+      <input type="submit" value="Append"> <br>
+    </div>
+
+    </body>
+
+  </html>

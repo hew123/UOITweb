@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="main2.css">
+  <title>Julie Thorpe</title>
+  <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initialscale=1">
+  <style>
+      *{text-align:center;}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+  </script>
+  <script src="appcontroller.js"></script>
+</head>
+<body ng-app="app" ng-controller="groupctrl">
+  <div class="header1">
+      <img class="headphoto" src="images/capture.jpg">
+  </div>
+  <div class ="topnav">
+    <a href="home.html">Home</a> <a href="pub.html">Publications</a> <a href="press.html">Press</a> <a href="research.html">Research Interest and Programs</a> <a href="teaching.html">Teaching</a> <a href="group.html">Research Group</a> <a href="contact.html">Contact</a>
+    <a href="http://localhost:8080/login">ADMIN PAGE</a>
+  </div>
+
+  <h1 style="text-align:center;"> Students </h1><br>
+  <div class="current">
+    <p style="line-height:22px;font-size:25px;"><b> Current </b> </p>
+    <ul style="list-style-type:none">
+      <li ng-repeat="x in studentarray| filter : {pastCurrent: 'current'}"> {{x.name}} ({{x.degree}})  </li>
+    </ul>
+    <br>
+
+  </div>
+  <div class="past">
+    <p style="font-size:25px;"> <b>Past</b> </p>
+    <ul style="line-height:22px;list-style-type:none">
+      <li ng-repeat="x in studentarray| filter : {pastCurrent: 'past'}"> {{x.name}} ({{x.degree}})  </li>
+<div class="footer">
+     <p>all work © Julie Thorpe • all rights reserved • to license images, get in touch</p>
+  </div>
+</body>
+</html>

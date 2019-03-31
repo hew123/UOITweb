@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="main2.css">
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <title>Julie Thorpe</title>
+  <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initialscale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+  </script>
+  <script src="appcontroller.js"></script>
+</head>
+<body ng-app="app">
+  <div class="header1">
+      <img class="headphoto" src="images/capture.jpg">
+  </div>
+  <div class ="topnav">
+    <a href="index.html">Home</a> <a href="pub.html">Publications</a> <a href="press.html">Press</a> <a href="research.html">Research Interest and Programs</a> <a href="teaching.html">Teaching</a> <a href="group.html">Research Group</a> <a href="contact.html">Contact</a>
+    <a href="http://localhost:8080/login">ADMIN PAGE</a>
+  </div>
+  <div class="row">
+
+      <div class="column middle" ng-controller="bioctrl">
+         <h2>About Me</h2>
+          <p id="aboutme"><img class="pic1" src={{img}} alt="profilepic" style="width:150.8px;height:200.5px;">
+            {{bio}} </p>
+      </div>
+      <div  class="column news" ng-controller="newsctrl">
+        <h2>News</h2>
+        <div id="scrollable">
+          <ul style="margin:0px 0px 0px 0px; list-style-type:none">
+            <li ng-repeat="x in newsarray">
+              <p class ="title"> {{x.title}}   </p>
+              {{x.description}}
+              <a href="{{x.url}}"> [link] </a>
+              <p class ="date"> {{x.date}}   </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+     </div>
+  <div class="footer">
+     <p>all work © Julie Thorpe • all rights reserved • to license images, get in touch</p>
+  </div>
+</body>
+</html>

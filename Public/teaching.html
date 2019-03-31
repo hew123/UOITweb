@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="main2.css">
+  <title>Julie Thorpe</title>
+  <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initialscale=1">
+  <style>
+      *{text-align:center;}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+  </script>
+  <script src="appcontroller.js"></script>
+</head>
+<body ng-app="app" ng-controller="teachingctrl">
+  <div class="header1">
+      <img class="headphoto" src="images/capture.jpg">
+  </div>
+  <div class ="topnav">
+    <a href="home.html">Home</a> <a href="pub.html">Publications</a> <a href="press.html">Press</a> <a href="research.html">Research Interest and Programs</a> <a href="teaching.html">Teaching</a> <a href="group.html">Research Group</a> <a href="contact.html">Contact</a>
+    <a href="http://localhost:8080/login">ADMIN PAGE</a>
+  </div>
+
+  <h1 style=""> Teaching </h1>
+  <div class="UOIT">
+    <p style=''> <b>University of Ontario Institute of Technology</b> </p>
+    <ul style="line-height:22px;list-style-type:none">
+      <li ng-repeat="x in coursearray| filter : {school: 'University of Ontario Institute of Technology'}">
+      {{x.semester}} {{x.year}}: {{x.courseTitle}} ({{x.courseNumber}})</li>
+    </ul>
+    <br>
+
+    <div class="Carleton University">
+      <p style=''><b> Carleton Univeristy </b></p>
+      <ul style="line-height:22px;list-style-type:none">
+        <li ng-repeat="x in coursearray| filter : {school: 'Carleton University'}">
+        {{x.semester}} {{x.year}}: {{x.courseTitle}} ({{x.courseNumber}})</li>
+      </ul>
+      <br>
+      <div class="footer">
+         <p>all work © Julie Thorpe • all rights reserved • to license images, get in touch</p>
+      </div>
+
+</body>
+</html>

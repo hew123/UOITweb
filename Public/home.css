@@ -1,0 +1,45 @@
+#aboutme{
+  background-color:white;
+  width:600px;
+  height:500px;
+  padding:50px;
+  font-size:20px;
+}
+
+.pic1{
+    margin-right:800px;
+    height:50px;
+}
+
+.a_bio:link{
+    color:rgba(255, 166, 0, 0.637);
+    text-decoration:none;
+}
+.a_bio:visited{
+    color:red;
+    text-decoration:none;
+}
+.a_bio:hover{
+    color:rgb(238, 0, 0);
+    text-decoration:none;
+}
+
+div#scrollable{
+  background-color:lightgrey;
+  overflow:scroll; height:500px;
+  //border: double;
+  margin-right:20px;
+}
+
+.title{
+  color:darkblue;
+  font-size:16pt;
+}
+.date{
+  color:grey;
+  font-style: italic;
+}
+
+a{
+    text-decoration: none;
+}

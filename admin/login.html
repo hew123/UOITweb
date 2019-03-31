@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link rel ="stylesheet" type="text/css" href="admin.css">
+      <meta charset="utf-8">
+      <meta name ="viewport" content="width=device-width,initial-scale=1">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="jquery.validate.js"></script>
+      <script src="AddValidateMethod.js"></script>
+      <script>
+          $(document).ready(function(){
+            $("#loginform").validate({
+              rules:{
+                user:{required:true},
+                password:{required:true},
+              }
+            });
+          });
+        </script>
+
+      <div class="header1">
+          <img class="headphoto" src="images2/capture.jpg">
+      </div>
+      <h1> Admin Page </h1>
+    </head>
+
+<body ng-app="app">
+  <div class="header1">
+  </div>
+    <form style="margin:80px 80px" id="loginform" action="http://localhost:8080/login" method="post">
+
+    <h2> Username: </h2>
+    <input style="height:30px; width:180px" id="user"  type="text" name="user"><br>
+
+    <h2> Password: </h2>
+    <input style="height:30px; width:180px" id="password"  type="password" name="password"><br>
+
+    <input style="margin:30px;" type="submit" value="login"> <br>
+
+    <p>NOTE: Each login session only lasts for 30 seconds before you need to login again :) </p>
+
+</html>
